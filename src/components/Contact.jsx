@@ -30,21 +30,19 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-//  39-UU80hbAQhUpmkc
-//  template_1vfyn9l
-//  service_8lhs5pb
+
     emailjs
       .send(
-        'service_8lhs5pb',
-        'template_1vfyn9l',
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "Sandun Chandrasiri",
+          to_name: "JavaScript Mastery",
           from_email: form.email,
-          to_email: "sandunprabudh01@gmail.com",
+          to_email: "sujata@jsmastery.pro",
           message: form.message,
         },
-        '39-UU80hbAQhUpmkc'
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
