@@ -6,9 +6,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-//  39-UU80hbAQhUpmkc
-//  template_1vfyn9l
-//  service_8lhs5pb
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -32,11 +30,13 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
+//  39-UU80hbAQhUpmkc
+//  template_1vfyn9l
+//  service_8lhs5pb
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        'service_8lhs5pb',
+        'template_1vfyn9l',
         {
           from_name: form.name,
           to_name: "Sandun Chandrasiri",
@@ -44,7 +44,7 @@ const Contact = () => {
           to_email: "sandunprabudh01@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        '39-UU80hbAQhUpmkc'
       )
       .then(
         () => {
